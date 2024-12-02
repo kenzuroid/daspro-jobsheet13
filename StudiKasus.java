@@ -36,29 +36,33 @@ public class StudiKasus {
                     benar = false;
                 }
             } while (benar);
+            System.out.println("Prestasi berhasil ditambahkan");
 
 
         }
     }
 
     static void tampilPrestasi(int jumlahData, int tahun[], String mahasiswa[][]){
-        if ( tahun [1] == 0) {
+        if ( tahun [0] == 0) {
             System.out.println("Belum ada data prestasi.");
         } else {
             System.out.println(" DAFTAR PRESTASI ");
-            for (int i = 0; i < jumlahData; i++) {
-                System.out.println("Nama: " + mahasiswa[i][0] + "| NIM: " + mahasiswa[i][1] + "| Jenis: " + mahasiswa[i][2] + "| Tingkat: " + mahasiswa[i][3] + "| Tahun: " + mahasiswa[i][4]);
+            for (int i = 0; i <= jumlahData; i++) {
+                System.out.println("Nama: " + mahasiswa[i][0] + "| NIM: " + mahasiswa[i][1] + "| Jenis: " + mahasiswa[i][2] + "| Tingkat: " + mahasiswa[i][3] + "| Tahun: " + tahun[i]);
             }
         }
     }
 
     static void pencarianPrestasi(String mahasiswa[][], int tahun[]){
         Scanner sc = new Scanner(System.in);
-
+        
         String jenisPrestasi;
         System.out.print("Tampilkan jenis prestasi yang ingin dicari: ");
         jenisPrestasi = sc.nextLine();
         boolean ditemukan = false;
+        if ( tahun [1] == 0) {
+            System.out.println("Belum ada data prestasi.");
+        }
 
         System.out.print("Jenis prestasi " + jenisPrestasi + " : ");
         for (int i = 0; i <= mahasiswa.length; i++) {
@@ -91,7 +95,7 @@ public class StudiKasus {
         do { 
             System.out.println("\n\nMENU UTAMA");
             System.out.println("1. Tambah data prestasi");
-            System.out.println("2. Tampilkan semua presatasi");
+            System.out.println("2. Tampilkan semua prestasi");
             System.out.println("3. Pencarian jenis prestasi");
             System.out.println("0. Keluar");
             System.out.print("Pilihan: ");
