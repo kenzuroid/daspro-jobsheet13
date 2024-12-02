@@ -69,7 +69,7 @@ public class StudiKasus {
             if (mahasiswa[i][2] == null) {
                 break;
             } else if (mahasiswa[i][2].equalsIgnoreCase(jenisPrestasi)) {
-                System.out.println("Nama: " + mahasiswa[i][0]);
+                System.out.print("\nNama: " + mahasiswa[i][0]);
                 System.out.print("|NIM: " + mahasiswa[i][1]);
                 System.out.print("|Tingkat: " + mahasiswa[i][3]);
                 System.out.print("|Tahun: " + tahun[i]);
