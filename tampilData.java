@@ -83,14 +83,14 @@ public class tampilData {
 
         System.out.print("Jenis prestasi " + jenisPrestasi + " : ");
         for (int i = 0; i <= prestasiMahasiswa.length; i++) {
-            if (prestasiMahasiswa[i][2].equalsIgnoreCase(jenisPrestasi)) {
+            if (prestasiMahasiswa[i][2] == null) {
+                break;
+            } else if (prestasiMahasiswa[i][2].equalsIgnoreCase(jenisPrestasi)) {
             System.out.print("\nNama: " + prestasiMahasiswa[i][0]);
             System.out.print("\nNIM: " + prestasiMahasiswa[i][1]);
             System.out.print("\nTingkat: " + prestasiMahasiswa[i][3]);
             System.out.print("\nTahun: " + prestasiMahasiswa[i][4]);
-            } else if (prestasiMahasiswa[i][2].equals(null)) {
-                break;
-            }
+            } else 
             ditemukan = true;
 
             
