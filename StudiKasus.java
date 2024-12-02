@@ -16,7 +16,7 @@ public class StudiKasus {
             do { 
                 System.out.print("Masukkan Tingkat Prestasi Mahasiswa (Lokal/Nasional/Internasional): ");
                 mahasiswa[jumlahData][3] = sc.nextLine();
-                if((mahasiswa[jumlahData][3].equals("Lokal")) || (mahasiswa[jumlahData][3].equals("Nasional"))  || (mahasiswa[jumlahData][3].equals("Internasional"))){
+                if((mahasiswa[jumlahData][3].equalsIgnoreCase("Lokal")) || (mahasiswa[jumlahData][3].equalsIgnoreCase("Nasional"))  || (mahasiswa[jumlahData][3].equalsIgnoreCase("Internasional"))){
                     benar = false;
                 }else{
                     System.out.println("Tingkat hanya Lokal/Nasional/Internasional!");
