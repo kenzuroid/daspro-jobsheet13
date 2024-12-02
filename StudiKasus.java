@@ -56,30 +56,32 @@ public class StudiKasus {
     static void pencarianPrestasi(String mahasiswa[][], int tahun[]){
         Scanner sc = new Scanner(System.in);
         
-        String jenisPrestasi;
-        System.out.print("Tampilkan jenis prestasi yang ingin dicari: ");
-        jenisPrestasi = sc.nextLine();
-        boolean ditemukan = false;
-        if ( tahun [1] == 0) {
+        if ( tahun [0] == 0) {
             System.out.println("Belum ada data prestasi.");
-        }
+        }else{
 
-        System.out.print("Jenis prestasi " + jenisPrestasi + " : ");
-        for (int i = 0; i <= mahasiswa.length; i++) {
-            if (mahasiswa[i][2] == null) {
-                break;
-            } else if (mahasiswa[i][2].equalsIgnoreCase(jenisPrestasi)) {
-                System.out.print("\nNama: " + mahasiswa[i][0]);
-                System.out.print("|NIM: " + mahasiswa[i][1]);
-                System.out.print("|Tingkat: " + mahasiswa[i][3]);
-                System.out.print("|Tahun: " + tahun[i]);
-            }
-            ditemukan = true;
-
+            String jenisPrestasi;
+            System.out.print("Tampilkan jenis prestasi yang ingin dicari: ");
+            jenisPrestasi = sc.nextLine();
+            boolean ditemukan = false;
             
-        }
-        if (!ditemukan) {
-            System.out.print("Jenis prestasi yang anda cari  tidak ditemukan.");
+            System.out.print("Jenis prestasi " + jenisPrestasi + " : ");
+            for (int i = 0; i <= mahasiswa.length; i++) {
+                if (mahasiswa[i][2] == null) {
+                    break;
+                } else if (mahasiswa[i][2].equalsIgnoreCase(jenisPrestasi)) {
+                    System.out.print("\nNama: " + mahasiswa[i][0]);
+                    System.out.print("| NIM: " + mahasiswa[i][1]);
+                    System.out.print("| Tingkat: " + mahasiswa[i][3]);
+                    System.out.print("| Tahun: " + tahun[i]);
+                    ditemukan = true;
+                }
+                
+                
+            }
+            if (ditemukan == false) {
+                System.out.println("Jenis prestasi yang anda cari  tidak ditemukan.");
+            }
         }
 
     }
