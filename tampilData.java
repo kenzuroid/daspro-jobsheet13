@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class jobsheet13 {
+public class tampilData {
 
     // Array untuk menyimpan data prestasi
     static String[][] prestasiMahasiswa = new String[100][5];
@@ -73,25 +73,32 @@ public class jobsheet13 {
     }
 
     // Fungsi untuk menganalisis prestasi berdasarkan jenis
-    public static void analisisPrestasi(Scanner scanner) {
-        System.out.print("Masukkan jenis prestasi yang ingin dianalisis: ");
-        String jenisDicari = scanner.nextLine();
+    public static void analisisPrestasi() {
+        Scanner sc = new Scanner(System.in);
+
+        String jenisPrestasi;
+        System.out.print("Tampilkan jenis prestasi yang ingin dicari: ");
+        jenisPrestasi = sc.nextLine();
         boolean ditemukan = false;
 
-        System.out.println("\nPrestasi dengan jenis '" + jenisDicari + "':");
-        for (int i = 0; i < jumlahData; i++) {
-            if (prestasiMahasiswa[i][2].equalsIgnoreCase(jenisDicari)) {
-                System.out.println("Nama: " + prestasiMahasiswa[i][0] +
-                        ", NIM: " + prestasiMahasiswa[i][1] +
-                        ", Tingkat: " + prestasiMahasiswa[i][3] +
-                        ", Tahun: " + prestasiMahasiswa[i][4]);
-                ditemukan = true;
+        System.out.print("Jenis prestasi " + jenisPrestasi + " : ");
+        for (int i = 0; i <= prestasiMahasiswa.length; i++) {
+            if (prestasiMahasiswa[i][2].equalsIgnoreCase(jenisPrestasi)) {
+            System.out.print("\nNama: " + prestasiMahasiswa[i][0]);
+            System.out.print("\nNIM: " + prestasiMahasiswa[i][1]);
+            System.out.print("\nTingkat: " + prestasiMahasiswa[i][3]);
+            System.out.print("\nTahun: " + prestasiMahasiswa[i][4]);
+            } else if (prestasiMahasiswa[i][2].equals(null)) {
+                break;
             }
+            ditemukan = true;
+
+            
+        }
+        if (!ditemukan) {
+            System.out.print("Jenis prestasi yang anda cari  tidak ditemukan.");
         }
 
-        if (!ditemukan) {
-            System.out.println("Tidak ada data prestasi dengan jenis '" + jenisDicari + "'.");
-        }
     }
 
     public static void main(String[] args) {
@@ -111,7 +118,7 @@ public class jobsheet13 {
                     tampilkanSemuaPrestasi();
                     break;
                 case 3:
-                    analisisPrestasi(scanner);
+                    analisisPrestasi();
                     break;
                 case 4:
                     System.out.println("Keluar dari program. Sampai jumpa!");
