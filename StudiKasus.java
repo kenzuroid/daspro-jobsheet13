@@ -47,7 +47,7 @@ public class StudiKasus {
             System.out.println("Belum ada data prestasi.");
         } else {
             System.out.println(" DAFTAR PRESTASI ");
-            for (int i = 0; i <= jumlahData; i++) {
+            for (int i = 0; i < jumlahData; i++) {
                 System.out.println("Nama: " + mahasiswa[i][0] + "| NIM: " + mahasiswa[i][1] + "| Jenis: " + mahasiswa[i][2] + "| Tingkat: " + mahasiswa[i][3] + "| Tahun: " + tahun[i]);
             }
         }
@@ -90,7 +90,7 @@ public class StudiKasus {
         String mahasiswa[][] = new String[25][4];
         int tahun[] = new int [25];
         int jumlahData = 0;
-        int pilihan = 0;
+        int pilihan;
         
         do { 
             System.out.println("\n\nMENU UTAMA");
