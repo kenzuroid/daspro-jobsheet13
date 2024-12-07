@@ -1,1 +1,0 @@
-elum ada data prestas
