@@ -76,8 +76,6 @@ public class StudiKasus {
                     System.out.print("| Tahun: " + tahun[i]);
                     ditemukan = true;
                 }
-                
-                
             }
             if (ditemukan == false) {
                 System.out.println("Jenis prestasi yang anda cari  tidak ditemukan.");
